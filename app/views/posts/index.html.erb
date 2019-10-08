@@ -9,17 +9,9 @@
   </ul>
 </header>
 
-<%
-  posts = [
-    "今日からProgateでRailsの勉強するよー!!!",
-    "投稿一覧ページ作成中!!",
-    "旅費がでないよ〜。"
-  ]
-%>
-
 <div class="main posts-index">
   <div class="container">
-    <% posts.each do |post| %>
+    <% @posts.each do |post| %>
       <div class="posts-index-item">
         <%= post %>
       </div>
