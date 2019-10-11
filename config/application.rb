@@ -15,5 +15,8 @@ module TweetApp
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    #エラーメッセージを日本語化（参考:https://qiita.com/Ushinji/items/242bfba84df7a5a67d5b）
+    config.i18n.default_locale = :ja
   end
 end
