@@ -21,4 +21,25 @@ class UsersController < ApplicationController
       render("/users/new")
     end
   end
+
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.name = params[:name]
+    @user.email = params[:email]
+    if @user.save
+      flash[:notice] = "ユーザーの編集が完了しました。"
+      redirect_to("/users/index")
+    else
+      render("/users/edit")
+    end
+  end
+
+  def destroy
+    @user = User.find_by(id: params[:id]).destroy
+    redirect_to("/users/index")
+  end
 end
