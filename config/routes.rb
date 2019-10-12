@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get 'about' => 'home#about' 
 
   get 'users/index' => 'users#index'
+  get 'users/:id' => 'users#show'
 end
