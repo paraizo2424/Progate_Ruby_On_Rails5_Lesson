@@ -15,11 +15,13 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name],
       email: params[:email],
-      image_name: "default_user.jpg"
+      image_name: "default_user.jpg",
+      password: params[:password]
     )
 
     if @user.save
       flash[:notice] = "ユーザー登録が完了しました。"
+      session[:user_id] = @user.id
       redirect_to("/users/index")
     else
       render("/users/new")
