@@ -5,6 +5,19 @@ ruby '2.6.5'
 
 # エラーメッセージを日本語化（参考:https://qiita.com/Ushinji/items/242bfba84df7a5a67d5b）
 gem 'rails-i18n'
+# エラーメッセージにあったので追加。以下エラー文
+# % rails s
+# => Booting Puma
+# => Rails 5.2.3 application starting in development
+# => Run `rails server -h` for more startup options
+#   Please add the following to your Gemfile to avoid polling for changes:
+#     gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+#   Please add the following to your Gemfile to avoid polling for changes:
+#     gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+# A server is already running. Check C:/Users/e0957/Desktop/git/Progate_Ruby_on_Rails5_lesson/tmp/pids/server.pid.
+# Exiting
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
