@@ -51,4 +51,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id]).destroy
     redirect_to("/users/index")
   end
+
+  def login_form
+  end
 end

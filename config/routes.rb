@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   post '/users/:id/update' => 'users#update'
   post '/users/:id/destroy' => 'users#destroy'
   get '/users/:id' => 'users#show'
+  get '/login' => 'users#login_form'
 end
