@@ -60,6 +60,7 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:email],password: params[:password])
     if @user
       flash[:notice] = "ログインしました。"
+      session[:user_id] = @user.id
       redirect_to("/posts/index")
     else
       @error_message = "メールアドレスまたはパスワードが間違っています"

@@ -27,6 +27,11 @@
         <li><%= link_to("ユーザー一覧", "/users/index") %></li>
         <li><%= link_to("新規登録", "/signup") %></li>
         <li><%= link_to("ログイン", "/login") %></li>
+        <% if session[:user_id] %>
+          <li>
+            現在ログインしているユーザーのid:<%= session[:user_id] %>
+          </li>
+        <% end %>
       </ul>
     </header>
 
