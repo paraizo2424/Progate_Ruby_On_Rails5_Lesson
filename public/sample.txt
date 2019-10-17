@@ -1,0 +1,4 @@
+Hello!!
+
+File.write("public/sample.txt", "Hello!!")
+でファイルが作成できるよ!!

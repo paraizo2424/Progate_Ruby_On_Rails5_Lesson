@@ -29,3 +29,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# publicフォルダ内にアップした画像をトラッキングしない。
+/public/user_images/*.jpg

@@ -47,6 +47,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
@@ -76,6 +77,7 @@ GEM
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.11.1)
+    ffi (1.11.1-x64-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.7.0)
@@ -100,8 +102,11 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.12.2)
     msgpack (1.3.1)
+    msgpack (1.3.1-x64-mingw32)
     nio4r (2.5.2)
     nokogiri (1.10.4)
+      mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.4-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     public_suffix (4.0.1)
     puma (3.12.1)
@@ -126,6 +131,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.2.0)
       loofah (~> 2.2, >= 2.2.2)
+    rails-i18n (5.1.3)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
     railties (5.2.3)
       actionpack (= 5.2.3)
       activesupport (= 5.2.3)
@@ -173,8 +181,11 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2019.3)
+      tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    wdm (0.1.1)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -188,8 +199,10 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
+  bcrypt
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
@@ -199,6 +212,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.11)
   rails (~> 5.2.3)
+  rails-i18n
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
@@ -207,10 +221,11 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
+  wdm (>= 0.1.0)
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 2.6.5p114
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
