@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   def set_current_user
     @current_user = User.find_by(id: session[:user_id])
+    # セッションを消去してログイン状態を解除する
+    # session[:user_id] = nil
   end
 
   def authenticate_user

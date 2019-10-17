@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action(:authenticate_user, {only: [:index, :show, :edit, :update]})
   before_action(:forbid_login_user, {only: [:new, :create, :login, :login_form]})
-  before_action(:ensure_correct_user, {only: [:edit, :update]})
+  before_action(:ensure_correct_user, {only: [:edit, :update, :destroy]})
 
   def index
     @users = User.all
@@ -54,8 +54,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by(id: params[:id]).destroy
-    redirect_to("/users/index")
+    User.find_by(id: params[:id]).destroy
+    Post.where(user_id: params[:id]).destroy_all
+    Like.where(user_id: params[:id]).destroy_all
+    session[:user_id] = nil
+    flash[:notice] = "ユーザを削除しました。"
+    redirect_to("/")
   end
 
   def login_form
@@ -87,5 +91,10 @@ class UsersController < ApplicationController
       flash[:notice] = "権限がありません。"
       redirect_to("/posts/index")
     end
+  end
+
+  def likes
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id)
   end
 end
