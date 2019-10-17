@@ -18,6 +18,9 @@ gem 'rails-i18n'
 # Exiting
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
+#暗号化するためのgem
+gem 'bcrypt'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
